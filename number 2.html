@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script type="text/javascript" src="kali.js"></script> -->
+    <title>nomor 2</title>
+</head>
+<body onload='kali();'>
+    <script>
+        function kali(){
+            var i,j;
+            document.write("<table bgcolor=\"black\">");
+            for(i=0;i<9;i++)
+            {
+                for(j=0;j<9;j++)
+                {
+                    if(i==0 && j==0)
+                        kiriAtas();
+                    else if(i==10 && j==10)
+                        kananBawah(i,j);
+                    else if(i==0 && j==10)
+                        kananAtas(j);
+                    else if(i==10 && j==0)
+                        kiriBawah(i);
+                    else if(i==0 && j!=0 && j!=10)
+                        barNol(j);
+                    else if(i!=0 && i!=10 && j==0)
+                        kolNol(i);
+                    else if(i!=0 && i!=10 && j==10)
+                        kolSepuluh(i,j);
+                    else
+                        itung(i,j);
+                }
+            }
+            document.write("</table>");
+        }
+
+        function kiriAtas()
+        {
+            document.write("<tr bgcolor=\"white\"><td width=\"30\"><center>X</td>");
+        }
+        function kananBawah(i,j)
+        {
+            document.write("<td>"+(i*j)+"</td></tr>");
+        }
+        function kananAtas(j)
+        {
+            document.write("<td><center>"+j+"</td></tr>");
+        }
+        function kiriBawah(i)
+        {
+            document.write("<tr bgcolor=\"white\"><td><center>"+i+"</td>");
+        }
+        function barNol(j)
+        {
+            document.write("<td width=\"30\"><center>"+j+"</td>");
+        }
+        function kolNol(i)
+        {
+            document.write("<tr bgcolor=\"white\"><td><center>"+i+"</td>");
+        }
+        function kolSepuluh(i,j)
+        {
+            document.write("<td width=\"30\"><center>"+(i*j)+"</td></tr>");
+        }
+        function itung(i,j)
+        {
+            document.write("<td><center>"+(i*j)+"</td>");
+        }
+    </script>
+
+</body>
+</html>
